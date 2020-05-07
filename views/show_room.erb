@@ -1,0 +1,18 @@
+<h1> <%= room.name %> </h1>
+
+<pre>
+  <%= room.description %>
+<pre>
+
+<p>Your Options Are:</p>
+<p> <%= room.paths.keys %></p>
+
+  <% if room.name == "The End" %>
+    <p><a href="/">Play Again?</a></p>
+  <% else %>
+    <p>
+      <form action="/game" method="POST">
+        <input type="text" name="action"> <input type="submit">
+      </form>
+    </p>
+  <% end %>
